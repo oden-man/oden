@@ -11,9 +11,9 @@ namespace oden
 {
 
 //#######################################################
-// •â•ŠÖ”
+// è£œåŠ©é–¢æ•°
 //
-  // “ñ‚Â‚Ì’l‚Ì·•ª‚ğ‚Æ‚é
+  // äºŒã¤ã®å€¤ã®å·®åˆ†ã‚’ã¨ã‚‹
 	template< typename T >
 	T difference( const T& a, const T& b )
 	{
@@ -23,7 +23,7 @@ namespace oden
 	}
 
 //#######################################################
-// xyÀ•W“_‚ğ•\‚·
+// xyåº§æ¨™ç‚¹ã‚’è¡¨ã™
 //
 	template< typename T >
 	class pointT
@@ -34,7 +34,7 @@ namespace oden
 	public:
 		typedef pointT<T>	self;
 		typedef T			value_type;
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		pointT()
 			: x_(0), y_(0)
 		{}
@@ -45,7 +45,7 @@ namespace oden
 			: x_(src.x_), y_(src.y_)
 		{}
 		
-	// ƒvƒƒpƒeƒB
+	// ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
 		value_type x()const { return x_; }
 		value_type y()const { return y_; }
 		
@@ -58,7 +58,7 @@ namespace oden
 			y_ = y;
 		}
 		
-	// ƒƒ“ƒoŠÖ”
+	// ãƒ¡ãƒ³ãƒé–¢æ•°
 		bool is_null()const 
 		{
 			return x_==0 && y_==0;
@@ -90,8 +90,8 @@ namespace oden
 			return self( x_ - src.x_, y_ - src.y_ );
 		}
 	
-	// ‰‰ZqƒI[ƒo[ƒ[ƒh
-	  // ’P€-
+	// æ¼”ç®—å­ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰
+	  // å˜é …-
 	  	self operator-()const
 	  	{
 	  		return self(-x_,-y_);	
@@ -124,7 +124,7 @@ namespace oden
 			return ((x_ == src.x_) && (y_ == src.y_));
 		}
 		
-	// ƒXƒƒbƒv
+	// ã‚¹ãƒ¯ãƒƒãƒ—
 		void swap( self& other )
 		{
 			std::swap( x_, other.x_ );	
@@ -141,7 +141,7 @@ namespace oden
 	};
 	
 //#######################################################
-// lŠpŒ`‚Ì¡–@:c‚Æ‰¡
+// å››è§’å½¢ã®å¯¸æ³•:ç¸¦ã¨æ¨ª
 //
 	template< typename T >
 	class sizeT
@@ -154,7 +154,7 @@ namespace oden
 	public:	
 		typedef T value_type;
 
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		sizeT()
 			: width_( 0 ), height_( 0 )
 		{}
@@ -165,7 +165,7 @@ namespace oden
 			: width_( src.width_ ), height_( src.height_ )
 		{}
 		
-	// ƒvƒƒpƒeƒB
+	// ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
 		value_type width()const 	{ return width_;  }
 		value_type height()const	{ return height_; }
 		
@@ -178,11 +178,11 @@ namespace oden
 			height_ = cy;
 		}
 		
-	// ƒƒ“ƒoŠÖ”
-	  // –ÊÏ
+	// ãƒ¡ãƒ³ãƒé–¢æ•°
+	  // é¢ç©
 		value_type area()const { return width_ * height_; }
 		
-	  // Šg‘åEk¬
+	  // æ‹¡å¤§ãƒ»ç¸®å°
 		void scale( double x, double y ) 
 		{
 			width_ = static_cast<value_type>(width_*x);
@@ -195,7 +195,7 @@ namespace oden
 	    	return ret;
 	    }
 	    
-	  // ƒAƒXƒyƒNƒg”ä‚ğç‚Á‚½‚Ü‚Ü‘å‚«‚³‚ğ•ÏX
+	  // ã‚¢ã‚¹ãƒšã‚¯ãƒˆæ¯”ã‚’å®ˆã£ãŸã¾ã¾å¤§ãã•ã‚’å¤‰æ›´
 		void set_width_keep_ratio( value_type w ) 
 		{
 			height_ = static_cast<value_type>( w * static_cast<double>(height_) / width_ );
@@ -207,7 +207,7 @@ namespace oden
 			height_ = h;
 		}
 		
-	  // c‰¡‚ğ“ü‚ê‘Ö‚¦‚é
+	  // ç¸¦æ¨ªã‚’å…¥ã‚Œæ›¿ãˆã‚‹
 		void transpose() 
 		{
 			std::swap( width_, height_ );
@@ -219,7 +219,7 @@ namespace oden
 		    return ret;
 		}
 
-	  // ‘ÎÛƒTƒCƒY‚ğŠÜ‚İ‚«‚ê‚é‘å‚«‚³‚©
+	  // å¯¾è±¡ã‚µã‚¤ã‚ºã‚’å«ã¿ãã‚Œã‚‹å¤§ãã•ã‹
 		bool contains( const self& src )const
 		{
 			if( this->is_valid() ) {
@@ -231,12 +231,12 @@ namespace oden
 			return std::max( width_, height_ ) >= std::max( src.width_, src.height_ );
 		}
 		
-	  // —LŒø«‚Ìƒ`ƒFƒbƒN
+	  // æœ‰åŠ¹æ€§ã®ãƒã‚§ãƒƒã‚¯
 		bool is_empty()const { return !is_valid(); }
 		bool is_null()const  { return width_==0 && height_==0; }
 		bool is_valid()const { return width_>0 && height_>0; }
 		
-	// ‰‰ZqƒI[ƒo[ƒ[ƒh
+	// æ¼”ç®—å­ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰
 	  // +-
 		self& operator+=( const self& src )
 		{
@@ -272,7 +272,7 @@ namespace oden
 			return this->area() < src.area();
 		}
 			
-	// ƒXƒƒbƒv
+	// ã‚¹ãƒ¯ãƒƒãƒ—
 		void swap( self& out )
 		{
 			std::swap(width_, out.width_);
@@ -289,20 +289,7 @@ namespace oden
 	};
 
 //#######################################################
-// ˆê‚Â‚ÌlŠpŒ`‚ğ•\‚·
-/*
-@qt ‚â wxwidget ‚Ìrect‚Å‚ÍA
-@‰E‰ºÀ•W‚Íi¶ã - •‚‚³ -1)‚ÅŒvZ‚³‚ê‚éB
-@‚±‚ê‚Í‰æ‘f‚ğ[1,1]‚Ì³•ûŒ`‚Æl‚¦‚Ä‚¢‚é‚½‚ßA’Pƒ‚É‘«‚µ‚Ä‚Í‹«ŠEü‚Ô‚ñ‘å‚«‚­‚È‚Á‚Ä‚µ‚Ü‚¤‚©‚çB
-@@—áF(1,1) (4,4)‚Ì³•ûŒ`‚Ì•‚‚³‚Í[5,5]‚É‚È‚é
-
-@ˆê•ûGDIEDirectX‚ÌŠÖ”‚Å‚Í‰æ‘f‚ğ“_‚Æ‚µ‚Äˆµ‚¢A‚»‚ÌŒãƒ‰ƒXƒ^ƒ‰ƒCƒ[[ƒVƒ‡ƒ“ƒ‹[ƒ‹‚É
-@‚Ì‚Á‚Æ‚Á‚ÄƒXƒNƒŠ[ƒ“À•W‚Ö•½sˆÚ“®‚·‚éB
-@‚»‚Ì‚½‚ßA’·•ûŒ`‚Í‹«ŠEü‚Ô‚ñ‘å‚«‚­‚È‚ç‚È‚¢B
-@
-@‚±‚Ìrect‚ÍAGDI‚ÌŠÖ”‚É‚»‚Ì‚Ü‚Ü“n‚¹‚é‚æ‚¤‚É‚µ‚½‚¢B
-@‚æ‚Á‚Ä‰E‰ºÀ•W-1‚Ì‘Î‰‚Í‚µ‚Ü‚¹‚ñII
-*/
+// ä¸€ã¤ã®å››è§’å½¢ã‚’è¡¨ã™
 //
 	template< typename T >
 	class rectT
@@ -315,7 +302,7 @@ namespace oden
 		typedef pointT<T>	point_type;
 		typedef sizeT<T>	size_type;
 
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		rectT()
 			: tl_(), br_()
 		{}
@@ -331,8 +318,8 @@ namespace oden
 			this->set( di, topleft );
 		}
 		
-	// ƒƒ“ƒoŠÖ”
-	  // æ“¾
+	// ãƒ¡ãƒ³ãƒé–¢æ•°
+	  // å–å¾—
 		value_type left  ()const	{ return tl_.x(); }
 		value_type right ()const	{ return br_.x(); }
 		value_type top   ()const	{ return tl_.y(); }
@@ -360,12 +347,12 @@ namespace oden
 		value_type width()  const{ return oden::difference( tl_.x(), br_.x() ); }
 		value_type height() const{ return oden::difference( tl_.y(), br_.y() ); }
 		
-	  // ’²‚×‚é
+	  // èª¿ã¹ã‚‹
 		bool is_empty()const { return !is_valid(); }
 		bool is_null()const  { return (tl_.x() == br_.x() && tl_.y() == br_.y()); }
 		bool is_valid()const { return (tl_.x() < br_.x()) && (tl_.y() < br_.y()); }
 		
-	  // ’·•ûŒ`‚ª— •Ô‚Á‚Ä‚¢‚ê‚ÎŒ³‚É–ß‚·
+	  // é•·æ–¹å½¢ãŒè£è¿”ã£ã¦ã„ã‚Œã°å…ƒã«æˆ»ã™
 		self normalized()const 
 		{
 			if( is_empty() && !is_null() ) {
@@ -374,7 +361,7 @@ namespace oden
 			return *this;
 		}
 
-	  // •½sˆÚ“®
+	  // å¹³è¡Œç§»å‹•
 		void shift( value_type dx, value_type dy )
 		{
 			tl_.shift( dx, dy );
@@ -394,7 +381,7 @@ namespace oden
 			return self( tl_.shifted( offs ), br_.shifted( offs ) );
 		}
 			
-	  // Šg‘å
+	  // æ‹¡å¤§
 		void grow( value_type d )
 		{
 			grow( d, d );
@@ -411,7 +398,7 @@ namespace oden
 			return rc;
 		}
 		
-	  // ’²®
+	  // èª¿æ•´
 		void adjust( value_type dl, value_type dt, value_type dr, value_type db )
 		{
 			tl_.shift( dl, dt );
@@ -424,7 +411,7 @@ namespace oden
 			return rc;
 		}
 		
-	  // •ïŠÜ”»’è
+	  // åŒ…å«åˆ¤å®š
 		bool contains( const point_type& point )const
 		{
 			return (tl_.x() <= point.x() && point.x() <= br_.x()) &&
@@ -446,7 +433,7 @@ namespace oden
 				   contains_proper(rect.br_);
 		}
 		
-	  // İ’è
+	  // è¨­å®š
 		void set( const point_type &topleft, const point_type &botright )
 		{
 			tl_ = topleft;
@@ -499,7 +486,7 @@ namespace oden
 			br_.set( point.x(), br_.y() );
 		}
 		
-	  // ¶ã‚ÍŒÅ’è‚Å•E‚‚³‚ğ•Ï‰»
+	  // å·¦ä¸Šã¯å›ºå®šã§å¹…ãƒ»é«˜ã•ã‚’å¤‰åŒ–
 		void set_width( value_type w )
 		{
 			br_.rx() = tl_.x() + w;
@@ -514,7 +501,7 @@ namespace oden
 			set_height( dm.height() );
 		}
 		
-	  // Še¬•ª‚ğˆÚ“®‚³‚¹‚é
+	  // å„æˆåˆ†ã‚’ç§»å‹•ã•ã›ã‚‹
 		void move_topleft( const point_type& to ) 
 		{
 			shift( to - topleft() );
@@ -552,7 +539,7 @@ namespace oden
 			shift( -dx, 0 );
 		}
 			
-	  // ORŒ‹‡
+	  // ORçµåˆ
 		self united( const self& rc )const
 		{
 			return self(
@@ -563,7 +550,7 @@ namespace oden
 				);
 		}
 		
-	  // Œğ·”»’è
+	  // äº¤å·®åˆ¤å®š
 		bool intersects( const self& rect )const
 		{
 			return (left()  <= rect.right()  ) &&
@@ -572,7 +559,7 @@ namespace oden
 				   (bottom()>= rect.top()    );
 		}
 		
-	  // ANDŒ‹‡
+	  // ANDçµåˆ
 		self intersected( const self& rc )const
 		{
 			if( !intersects( rc ) )
@@ -585,7 +572,7 @@ namespace oden
 				);
 		}
 		
-	  // cŠ„‚è‚É‚·‚é
+	  // ç¸¦å‰²ã‚Šã«ã™ã‚‹
 	  	bool divide_lengthwise( value_type at, self& part1, self& part2 )const
 	  	{
 			if( at < left() || right() < at )
@@ -603,7 +590,7 @@ namespace oden
 			return true;
 	  	}
 	  	
-	  // ‰¡Š„‚è‚É‚·‚é
+	  // æ¨ªå‰²ã‚Šã«ã™ã‚‹
 	  	bool divide_widthwise( value_type at, self& part1, self& part2 )const
 	  	{
 			if( at < top() || bottom() < at )
@@ -621,7 +608,7 @@ namespace oden
 			return true;
 	  	}
 		
-	// ‰‰ZqƒI[ƒo[ƒ[ƒh
+	// æ¼”ç®—å­ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰
 		bool operator==( const self& src )const
 		{
 			return ((tl_ == src.tl_) && (br_ == src.br_));
