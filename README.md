@@ -3,16 +3,16 @@ oden
 
 Some small unfinished libraries written in C++
 
-gammo    - win32 wrapper 
+gammo			- win32 wrapper 
 
-chikuwa  - string tools
+chikuwa		- string tools
 
-memory   - continuous memory range
+memory		- continuous memory range
 
-oage     - file/stream tools
+oage			- file/stream tools
 
-object   - about RAII things
+object		- about RAII things
 
-konbu    - generate functors
+konb			- generate functors
 
 
